@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using BrasilApiConsumer.Converters;
 
 namespace BrasilApiConsumer.Models;
 
@@ -17,6 +18,7 @@ public class Cotacao
     public decimal CotacaoVenda { get; set; }
 
     [JsonPropertyName("data_hora_cotacao")]
+    [JsonConverter(typeof(CustomDateTimeConverter))]
     public DateTime DataHoraCotacao { get; set; }
 
     [JsonPropertyName("tipo_boletim")]

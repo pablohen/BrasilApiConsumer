@@ -28,7 +28,7 @@ public class CambioController(IBrasilApi brasilApi) : ControllerBase
     [ProducesResponseType(typeof(Cotacoes), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<IActionResult> GetCotacoes([Required] string moeda, [Required] string data)
+    public async Task<IActionResult> GetCotacoes([Required] string moeda, [Required] DateOnly data)
     {
         if (!ModelState.IsValid)
         {

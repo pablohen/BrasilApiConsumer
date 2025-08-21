@@ -15,5 +15,5 @@ public interface IBrasilApi
     Task<List<Moeda>> GetMoedasAsync();
 
     [Get("/cambio/v1/cotacao/{moeda}/{data}")]
-    Task<Cotacoes> GetCotacoesAsync(string moeda, string data);
+    Task<Cotacoes> GetCotacoesAsync(string moeda, DateOnly data);
 }
