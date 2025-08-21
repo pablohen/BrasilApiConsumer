@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+using BrasilApiConsumer.Models;
 using BrasilApiConsumer.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,6 +12,8 @@ public class BanksController(IBrasilApi brasilApi) : ControllerBase
     private readonly IBrasilApi _brasilApi = brasilApi;
 
     [HttpGet("")]
+    [ProducesResponseType(typeof(List<Bank>), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> GetBanks()
     {
         var banks = await _brasilApi.GetBanksAsync();
@@ -21,8 +25,16 @@ public class BanksController(IBrasilApi brasilApi) : ControllerBase
     }
 
     [HttpGet("{code}")]
-    public async Task<IActionResult> GetBankByCode(string code)
+    [ProducesResponseType(typeof(Bank), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public async Task<IActionResult> GetBankByCode([Required] string code)
     {
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
+
         var bank = await _brasilApi.GetBankByCodeAsync(code);
         if (bank == null)
         {
