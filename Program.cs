@@ -1,3 +1,5 @@
+using BrasilApiConsumer.Extensions;
+using BrasilApiConsumer.Middleware;
 using BrasilApiConsumer.Services;
 using Refit;
 
@@ -5,10 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder
     .Services.AddRefitClient<IBrasilApi>()
-    .ConfigureHttpClient(c =>
-    {
-        c.BaseAddress = new Uri("https://brasilapi.com.br/api");
-    });
+    .ConfigureHttpClient(c => c.BaseAddress = new Uri("https://brasilapi.com.br/api"));
 
 builder.Services.AddControllers();
 builder.Services.Configure<RouteOptions>(o => o.LowercaseUrls = true);
@@ -25,9 +24,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseRefitExceptionHandling();
 app.UseAuthorization();
-
 app.MapControllers();
-
 app.Run();
