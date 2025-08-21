@@ -18,6 +18,6 @@ public interface IBrasilApi
     [Get("/cambio/v1/cotacao/{currencyCode}/{date}")]
     Task<Cotacoes> GetCotacoesAsync(CurrencyCode currencyCode, DateOnly date);
 
-    [Get("/cep/v1/{cep}")]
+    [Get("/cep/v2/{cep}")]
     Task<CepResponse> GetCepAsync(string cep);
 }

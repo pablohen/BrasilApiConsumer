@@ -21,4 +21,25 @@ public class CepResponse
 
     [JsonPropertyName("service")]
     public string Service { get; set; } = string.Empty;
+
+    [JsonPropertyName("location")]
+    public Location? Location { get; set; }
+}
+
+public class Coordinates
+{
+    [JsonPropertyName("longitude")]
+    public string Longitude { get; set; } = string.Empty;
+
+    [JsonPropertyName("latitude")]
+    public string Latitude { get; set; } = string.Empty;
+}
+
+public class Location
+{
+    [JsonPropertyName("type")]
+    public string Type { get; set; } = string.Empty;
+
+    [JsonPropertyName("coordinates")]
+    public Coordinates Coordinates { get; set; } = new();
 }
