@@ -1,4 +1,4 @@
-using BrasilApiConsumer.Interfaces;
+using BrasilApiConsumer.Services;
 using Refit;
 
 var builder = WebApplication.CreateBuilder(args);

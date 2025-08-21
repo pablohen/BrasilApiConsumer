@@ -17,8 +17,8 @@ public class Cotacao
     public decimal CotacaoVenda { get; set; }
 
     [JsonPropertyName("data_hora_cotacao")]
-    public string DataHoraCotacao { get; set; }
+    public DateTime DataHoraCotacao { get; set; }
 
     [JsonPropertyName("tipo_boletim")]
-    public string TipoBoletim { get; set; }
+    public string TipoBoletim { get; set; } = string.Empty;
 }

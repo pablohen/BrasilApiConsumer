@@ -1,7 +1,7 @@
 using BrasilApiConsumer.Models;
 using Refit;
 
-namespace BrasilApiConsumer.Interfaces;
+namespace BrasilApiConsumer.Services;
 
 public interface IBrasilApi
 {
