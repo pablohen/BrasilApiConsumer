@@ -1,3 +1,4 @@
+using BrasilApiConsumer.Enums;
 using BrasilApiConsumer.Models;
 using Refit;
 
@@ -14,6 +15,6 @@ public interface IBrasilApi
     [Get("/cambio/v1/moedas")]
     Task<List<Moeda>> GetMoedasAsync();
 
-    [Get("/cambio/v1/cotacao/{moeda}/{data}")]
-    Task<Cotacoes> GetCotacoesAsync(string moeda, DateOnly data);
+    [Get("/cambio/v1/cotacao/{currencyCode}/{date}")]
+    Task<Cotacoes> GetCotacoesAsync(CurrencyCode currencyCode, DateOnly date);
 }

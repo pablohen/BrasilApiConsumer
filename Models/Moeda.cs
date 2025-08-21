@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using BrasilApiConsumer.Enums;
 
 namespace BrasilApiConsumer.Models;
 
@@ -8,7 +9,7 @@ public class Moeda
     public string Nome { get; set; } = string.Empty;
 
     [JsonPropertyName("simbolo")]
-    public string Simbolo { get; set; } = string.Empty;
+    public CurrencyCode Simbolo { get; set; }
 
     [JsonPropertyName("tipo_moeda")]
     public string TipoMoeda { get; set; } = string.Empty;

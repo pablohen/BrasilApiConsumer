@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using BrasilApiConsumer.Extensions;
 using BrasilApiConsumer.Middleware;
 using BrasilApiConsumer.Services;
@@ -9,11 +10,21 @@ builder
     .Services.AddRefitClient<IBrasilApi>()
     .ConfigureHttpClient(c => c.BaseAddress = new Uri("https://brasilapi.com.br/api"));
 
-builder.Services.AddControllers();
+builder
+    .Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+    });
+
 builder.Services.Configure<RouteOptions>(o => o.LowercaseUrls = true);
 
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.UseAllOfToExtendReferenceSchemas();
+    c.UseInlineDefinitionsForEnums();
+});
 
 var app = builder.Build();
 
