@@ -20,4 +20,10 @@ public interface IBrasilApi
 
     [Get("/cep/v2/{cep}")]
     Task<CepResponse> GetCepAsync(string cep);
+
+    [Get("/cvm/corretoras/v1")]
+    Task<List<Corretora>> GetCorretorasAsync();
+
+    [Get("/cvm/corretoras/v1/{cnpj}")]
+    Task<Corretora> GetCorretoraByCnpjAsync(string cnpj);
 }
