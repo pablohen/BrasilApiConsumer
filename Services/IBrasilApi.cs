@@ -26,4 +26,7 @@ public interface IBrasilApi
 
     [Get("/cvm/corretoras/v1/{cnpj}")]
     Task<Corretora> GetCorretoraByCnpjAsync(string cnpj);
+
+    [Get("/cnpj/v1/{cnpj}")]
+    Task<CnpjResponse> GetCnpjAsync(string cnpj);
 }
