@@ -32,4 +32,7 @@ public interface IBrasilApi
 
     [Get("/pix/v1/participants")]
     Task<List<PixParticipant>> GetPixParticipantsAsync();
+
+    [Get("/registrobr/v1/{domain}")]
+    Task<DomainResponse> GetDomainAsync(string domain);
 }
