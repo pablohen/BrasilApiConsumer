@@ -38,4 +38,7 @@ public interface IBrasilApi
 
     [Get("/ddd/v1/{ddd}")]
     Task<DddResponse> GetDddAsync(string ddd);
+
+    [Get("/feriados/v1/{ano}")]
+    Task<List<Holiday>> GetFeriadosAsync(int ano);
 }
