@@ -29,4 +29,7 @@ public interface IBrasilApi
 
     [Get("/cnpj/v1/{cnpj}")]
     Task<CnpjResponse> GetCnpjAsync(string cnpj);
+
+    [Get("/pix/v1/participants")]
+    Task<List<PixParticipant>> GetPixParticipantsAsync();
 }
