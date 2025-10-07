@@ -32,7 +32,16 @@ public class BanksController(IBrasilApi brasilApi, ILogger<BanksController> logg
     [ProducesResponseType(typeof(Bank), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public async Task<IActionResult> GetBankByCode([Required] string code)
+    public async Task<IActionResult> GetBankByCode(
+        [Required]
+        [StringLength(
+            3,
+            MinimumLength = 1,
+            ErrorMessage = "Bank code must be between 1 and 3 characters"
+        )]
+        [RegularExpression(@"^\d+$", ErrorMessage = "Bank code must contain only digits")]
+            string code
+    )
     {
         if (!ModelState.IsValid)
         {
