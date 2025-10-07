@@ -20,7 +20,7 @@ public class DomainResponse
     public string? PublicationStatus { get; set; }
 
     [JsonPropertyName("expires-at")]
-    public string? ExpiresAt { get; set; }
+    public DateTime? ExpiresAt { get; set; }
 
     [JsonPropertyName("suggestions")]
     public List<string>? Suggestions { get; set; }

@@ -14,13 +14,13 @@ public class CnaesSecundario
 public class Qsa
 {
     [JsonPropertyName("pais")]
-    public object Pais { get; set; } = new();
+    public string? Pais { get; set; }
 
     [JsonPropertyName("nome_socio")]
     public string NomeSocio { get; set; } = string.Empty;
 
     [JsonPropertyName("codigo_pais")]
-    public object CodigoPais { get; set; } = new();
+    public string? CodigoPais { get; set; }
 
     [JsonPropertyName("faixa_etaria")]
     public string FaixaEtaria { get; set; } = string.Empty;
@@ -62,7 +62,7 @@ public class RegimeTributario
     public int? Ano { get; set; }
 
     [JsonPropertyName("cnpj_da_scp")]
-    public object CnpjDaScp { get; set; } = new();
+    public string? CnpjDaScp { get; set; }
 
     [JsonPropertyName("forma_de_tributacao")]
     public string FormaDeTributacao { get; set; } = string.Empty;
@@ -86,10 +86,10 @@ public class CnpjResponse
     public string Cnpj { get; set; } = string.Empty;
 
     [JsonPropertyName("pais")]
-    public object Pais { get; set; } = new();
+    public string? Pais { get; set; }
 
     [JsonPropertyName("email")]
-    public object Email { get; set; } = new();
+    public string? Email { get; set; }
 
     [JsonPropertyName("porte")]
     public string Porte { get; set; } = string.Empty;
@@ -113,7 +113,7 @@ public class CnpjResponse
     public int? CnaeFiscal { get; set; }
 
     [JsonPropertyName("codigo_pais")]
-    public object CodigoPais { get; set; } = new();
+    public string? CodigoPais { get; set; }
 
     [JsonPropertyName("complemento")]
     public string Complemento { get; set; } = string.Empty;
@@ -137,7 +137,7 @@ public class CnpjResponse
     public string DddTelefone2 { get; set; } = string.Empty;
 
     [JsonPropertyName("opcao_pelo_mei")]
-    public object OpcaoPeloMei { get; set; } = new();
+    public bool? OpcaoPeloMei { get; set; }
 
     [JsonPropertyName("descricao_porte")]
     public string DescricaoPorte { get; set; } = string.Empty;
@@ -158,16 +158,16 @@ public class CnpjResponse
     public string SituacaoEspecial { get; set; } = string.Empty;
 
     [JsonPropertyName("opcao_pelo_simples")]
-    public object OpcaoPeloSimples { get; set; } = new();
+    public bool? OpcaoPeloSimples { get; set; }
 
     [JsonPropertyName("situacao_cadastral")]
     public int? SituacaoCadastral { get; set; }
 
     [JsonPropertyName("data_opcao_pelo_mei")]
-    public object DataOpcaoPeloMei { get; set; } = new();
+    public string? DataOpcaoPeloMei { get; set; }
 
     [JsonPropertyName("data_exclusao_do_mei")]
-    public object DataExclusaoDoMei { get; set; } = new();
+    public string? DataExclusaoDoMei { get; set; }
 
     [JsonPropertyName("cnae_fiscal_descricao")]
     public string CnaeFiscalDescricao { get; set; } = string.Empty;
@@ -179,10 +179,10 @@ public class CnpjResponse
     public string DataInicioAtividade { get; set; } = string.Empty;
 
     [JsonPropertyName("data_situacao_especial")]
-    public object DataSituacaoEspecial { get; set; } = new();
+    public string? DataSituacaoEspecial { get; set; }
 
     [JsonPropertyName("data_opcao_pelo_simples")]
-    public object DataOpcaoPeloSimples { get; set; } = new();
+    public string? DataOpcaoPeloSimples { get; set; }
 
     [JsonPropertyName("data_situacao_cadastral")]
     public string DataSituacaoCadastral { get; set; } = string.Empty;
@@ -194,7 +194,7 @@ public class CnpjResponse
     public int? CodigoNaturezaJuridica { get; set; }
 
     [JsonPropertyName("data_exclusao_do_simples")]
-    public object DataExclusaoDoSimples { get; set; } = new();
+    public string? DataExclusaoDoSimples { get; set; }
 
     [JsonPropertyName("motivo_situacao_cadastral")]
     public int? MotivoSituacaoCadastral { get; set; }
