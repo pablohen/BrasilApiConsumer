@@ -35,4 +35,7 @@ public interface IBrasilApi
 
     [Get("/registrobr/v1/{domain}")]
     Task<DomainResponse> GetDomainAsync(string domain);
+
+    [Get("/ddd/v1/{ddd}")]
+    Task<DddResponse> GetDddAsync(string ddd);
 }
