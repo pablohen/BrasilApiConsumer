@@ -41,4 +41,10 @@ public interface IBrasilApi
 
     [Get("/feriados/v1/{ano}")]
     Task<List<Holiday>> GetFeriadosAsync(int ano);
+
+    [Get("/taxas/v1")]
+    Task<List<Taxa>> GetTaxasAsync();
+
+    [Get("/taxas/v1/{sigla}")]
+    Task<Taxa> GetTaxaBySiglaAsync(string sigla);
 }
